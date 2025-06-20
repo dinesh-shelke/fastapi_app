@@ -10,7 +10,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout code from GitHub
-                git branch: 'main', url: 'https://github.com/your-username/your-fastapi-repo.git'
+                git branch: 'main', url: 'https://github.com/dinesh-shelke/fastapi_app.git'
             }
         }
         stage('Set up Python') {
@@ -31,7 +31,7 @@ pipeline {
             steps {
                 // Optional: Build step, e.g., Docker build
                 // sh "docker build -t your-fastapi-app ."
-                echo 'Build step (customize as needed)'
+                sh '. venv/bin/uvicorn main:app --host 0.0.0.0 --port 4288'
             }
         }
     }
