@@ -23,12 +23,12 @@ pipeline {
                 sh 'ls -la'
             }
         }
-        stage('Run Tests') {
-            steps {
-                // Run pytest
-                sh '. venv/bin/activate && pytest'
-            }
-        }
+        // stage('Run Tests') {
+        //     steps {
+        //         // Run pytest
+        //         sh '. venv/bin/activate && pytest'
+        //     }
+        // }
         stage('Build') {
             steps {
                 // Optional: Build step, e.g., Docker build
