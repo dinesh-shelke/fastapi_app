@@ -18,7 +18,9 @@ pipeline {
                 // Install dependencies
                 sh "${env.PYTHON} -m venv venv"
                 sh '. venv/bin/activate && pip install --upgrade pip'
-                sh '. venv/bin/activate && pip install -r requirements.txt'
+                // sh '. venv/bin/activate && pip install -r requirements.txt'
+                sh 'pwd'
+                sh 'ls -la'
             }
         }
         stage('Run Tests') {
