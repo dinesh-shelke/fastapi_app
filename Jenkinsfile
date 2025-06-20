@@ -33,7 +33,8 @@ pipeline {
             steps {
                 // Optional: Build step, e.g., Docker build
                 // sh "docker build -t your-fastapi-app ."
-                sh '. venv/bin/activate && uvicorn main:app --host 0.0.0.0 --port 4288'
+                sh 'kill -9 $(ps aufx | grep 428[8] | awk \'{ print $2 }\')'
+                sh '. venv/bin/activate && uvicorn main:app --host 0.0.0.0 --port 4288 &'
             }
         }
     }
